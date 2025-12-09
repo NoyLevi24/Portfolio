@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noy Levi - Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        .cv-btn {
+            background: linear-gradient(135deg, #4a6cf7 0%, #2541b2 100%);
+            color: white;
+            padding: 0.4rem 0.9rem;
+            border-radius: 6px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(37, 65, 178, 0.2);
+        }
+
+        .cv-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(37, 65, 178, 0.3);
+            background: linear-gradient(135deg, #5a7cf8 0%, #3552c4 100%);
+        }
+
+        /* Header Section */
+        .header {
+            height: 100vh;
+            display: flex;
+            background: url('images/devops.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+            margin-top: 0;
+            background-attachment: fixed;
+        }
+
+        .header-content {
+            text-align: center;
+            width: 100%;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: white;
+            font-weight: 700;
+            font-style: italic;
+            line-height: 1.1;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            margin-top: 0;
+        }
+
+        .header p.subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin: 1rem auto 3rem;
+            max-width: 700px;
+            color: white;
+            line-height: 1.6;
+            font-style: italic;
+            font-weight: 400;
+            background: rgba(0, 0, 0, 0.5);
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .highlight {
+            color: var(--secondary);
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .header .btn {
+            display: inline-block;
+            padding: 0.7rem 1.8rem;
+            background: linear-gradient(135deg, #4a6cf7 0%, #2541b2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            border: none;
+            text-transform: none;
+            letter-spacing: 0.3px;
+            box-shadow: 0 3px 8px rgba(37, 65, 178, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 12px rgba(37, 65, 178, 0.35);
+            background: linear-gradient(135deg, #5a7cf8 0%, #3552c4 100%);
+        }
+
+        .header .btn:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 5px rgba(37, 65, 178, 0.2);
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 4px;
+            background-color: var(--secondary);
+            bottom: -10px;
+            left: 25%;
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            width: 300px;
+            height: 400px;
+            margin: 0 auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .about-image:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.02);
+        }
+
+        .about-text {
+            flex: 2;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 2rem;
+            margin: 3rem auto 0;
+            max-width: 1000px;
+            justify-content: center;
+        }
+        
+        @media (max-width: 768px) {
+            .skills-grid {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+                padding: 0 1rem;
+            }
+        }
+
+        .skill-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 150px;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-item i,
+        .skill-item img {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            object-fit: contain;
+        }
+
+        .skill-item span {
+            font-weight: 600;
+            color: var(--dark);
+            margin-top: auto;
+        }
+
+        /* Certificates Section */
+        .certificates {
+            background-color: #f9f9f9;
+            padding: 5rem 0;
+        }
+
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .certificate-content {
+            padding: 2rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .certificate-content h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .certificate-content p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+        
+        .view-all-card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ed 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .view-all-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .view-all-content {
+            padding: 2rem;
+        }
+        
+        .view-all-card h3 {
+            color: var(--primary);
+            margin: 1rem 0 0.5rem;
+        }
+        
+        .view-all-card p {
+            color: #666;
+            margin: 0;
+        }
+
+        .certificate-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .certificate-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .certificate-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+
+        .credly-badge {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .view-badges {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            margin-top: 1rem;
+            color: #4a6cf7;
+            font-weight: 500;
+            font-size: 0.85rem;
+            padding: 0.45rem 0.9rem;
+            border: 2px solid #4a6cf7;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            background: rgba(74, 108, 247, 0.05);
+            text-decoration: none;
+        }
+
+        .credly-badge:hover .view-badges {
+            background: linear-gradient(135deg, #4a6cf7 0%, #2541b2 100%);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(37, 65, 178, 0.2);
+            border-color: transparent;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .featured-project {
+            width: 100%;
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Accordion Styles */
+        .accordion {
+            width: 100%;
+            max-width: 1200px;
+            margin: 2rem auto 0;
+        }
+
+        .accordion-item {
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background: white;
+        }
+
+        .accordion-header {
+            padding: 1.5rem;
+            background: #f8f9fa;
+            color: #333;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .accordion-header:hover {
+            background: #f1f3f5;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        }
+
+        .accordion-header h3 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 1.5rem;
+        }
+
+        .accordion-item.active .accordion-content {
+            max-height: 2000px; /* Adjust based on your content */
+            padding: 1.5rem;
+        }
+
+        .accordion-icon {
+            transition: transform 0.3s;
+        }
+
+        .accordion-item.active .accordion-header {
+            background: #e9ecef;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        .accordion-item.active .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Project Image Styling */
+        .project-image {
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            overflow: visible;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .project-image img {
+            max-width: 100%;
+            max-height: 80vh; /* Increased from 70vh to 80vh */
+            width: auto;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: none;
+            object-fit: contain;
+            object-position: center;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-card h3 {
+            padding: 0 1.5rem 0.5rem;
+            color: var(--primary);
+        }
+        
+        .project-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 8px 8px 0 0;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+
+        .project-card p {
+            padding: 0 1.5rem 1.5rem;
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .project-links {
+            padding: 0 1.5rem 1.5rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            padding: 0.45rem 0.9rem;
+            background: linear-gradient(135deg, #4a6cf7 0%, #2541b2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(37, 65, 178, 0.15);
+            min-width: 100px;
+        }
+
+        .project-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(37, 65, 178, 0.25);
+            background: linear-gradient(135deg, #5a7cf8 0%, #3552c4 100%);
+        }
+
+        .project-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 5px rgba(37, 65, 178, 0.15);
+        }
+
+        /* Contact Section */
+        .contact-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--dark);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .contact-item:hover {
+            color: var(--secondary);
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .header h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-image {
+                margin-bottom: 2rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">Noy Levi</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certificates">Certificates</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="NOY_LEVI.pdf" target="_blank" class="cv-btn">
+                <i class="fas fa-file-pdf"></i> CV
+            </a>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section id="home" class="header">
+        <div class="container">
+            <div class="header-content" data-aos="fade-up">
+                <h1>Hi, I'm <span style="color: white">Noy Levi</span></h1>
+                <p class="subtitle">DevOps Engineer</p>
+                <div style="margin-top: 2rem;">
+                    <a href="#contact" class="cv-btn" style="margin-right: 1rem;">
+                        <i class="fas fa-envelope"></i> Contact Me
+                    </a>
+                    <a href="#projects" class="cv-btn" style="background-color: var(--accent);">
+                        <i class="fas fa-code"></i> View My Work
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">About Me</h2>
+            <div class="about-content" data-aos="fade-up" data-aos-delay="100">
+                <div class="about-image">
+                    <img src="images/Self_image.jpeg" alt="Noy Levi - Profile Image">
+                </div>
+                <div class="about-text">
+                    <p>
+                        As a former combat soldier in the IDF Search and Rescue Brigade, I've transitioned into a dynamic and results-driven DevOps Engineer, bringing the same discipline and problem-solving skills from my military service to the world of technology. Right after completing my military service, I got into the Combat Soldiers to High-Tech Program, where I completed an intensive one-year DevOps course.
+                    </p>
+                    <p>
+                        My journey continued with a three-month intensive internship at Octopus Computer Solutions, where I gained hands-on experience in building robust, scalable, and efficient infrastructure. I've developed expertise in core DevOps with a strong focus on automation and cloud technologies.
+                    </p>
+                    <p>
+                        My technical toolkit includes Kubernetes, Terraform (IaC), Helm, ArgoCD (GitOps), and comprehensive observability tools like Prometheus and Grafana. I've successfully engineered and deployed cloud-native platforms using microservices architecture on AWS, establishing full GitOps workflows for automated multi-environment continuous deployment. I'm certified as an AWS Solutions Architect, Terraform Associate, RHCSA, RHCE, and CCNA, with strong foundations in networking, Python, and Linux.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Technical Skills</h2>
+            <div class="skills-grid" data-aos="fade-up" data-aos-delay="100">
+                <div class="skill-item">
+                    <i class="devicon-amazonwebservices-plain-wordmark colored"></i>
+                    <span>AWS</span>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-argocd-plain colored"></i>
+                    <span>ArgoCD</span>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-docker-plain colored"></i>
+                    <span>Docker</span>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-kubernetes-plain colored"></i>
+                    <span>Kubernetes</span>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-terraform-plain colored"></i>
+                    <span>Terraform</span>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-jenkins-line colored"></i>
+                    <span>Jenkins</span>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-github-original"></i>
+                    <span>GitHub</span>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-git-plain colored"></i>
+                    <span>Git</span>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-linux-plain colored"></i>
+                    <span>Linux</span>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-python-plain colored"></i>
+                    <span>Python</span>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-bash-plain colored"></i>
+                    <span>Bash</span>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-prometheus-original colored"></i>
+                    <span>Prometheus</span>
+                </div>
+                <div class="skill-item">
+                    <img src="https://devicon-website.vercel.app/api/grafana/original.svg" alt="Grafana" style="width: 40px; height: 40px; margin-bottom: 10px;">
+                    <span>Grafana</span>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-ansible-plain colored"></i>
+                    <span>Ansible</span>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-helm-original colored"></i>
+                    <span>Helm</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certificates" class="certificates">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Certifications</h2>
+            <div class="certificates-grid" data-aos="fade-up" data-aos-delay="100">
+                <!-- HashiCorp Certified: Terraform Associate -->
+                <div class="certificate-card">
+                    <div class="certificate-content">
+                        <img src="badges/hashicorp-certified-terraform-associate-003.png" alt="HashiCorp Certified: Terraform Associate" style="max-width: 150px; margin: 0 auto 1rem; display: block;">
+                        <h3>HashiCorp Certified: Terraform Associate (003)</h3>
+                        <p>Expires: Nov 10, 2027</p>
+                        <a href="https://www.credly.com/badges/4068368d-45cc-40da-bb2c-4a6982b9995b/public_url" target="_blank" class="view-badges">View Credential</a>
+                    </div>
+                </div>
+                
+                <!-- Red Hat Certified Engineer -->
+                <div class="certificate-card">
+                    <div class="certificate-content">
+                        <img src="badges/red-hat-certified-engineer-rhce.png" alt="Red Hat Certified Engineer" style="max-width: 150px; margin: 0 auto 1rem; display: block;">
+                        <h3>Red Hat Certified Engineer (RHCE)</h3>
+                        <p>Expires: Sep 8, 2028</p>
+                        <a href="https://www.credly.com/badges/0058c3c5-dbe5-4d12-b3a7-059029e98225/public_url" target="_blank" class="view-badges">View Credential</a>
+                    </div>
+                </div>
+                
+                <!-- Red Hat Certified System Administrator -->
+                <div class="certificate-card">
+                    <div class="certificate-content">
+                        <img src="badges/red-hat-certified-system-administrator-rhcsa.png" alt="Red Hat Certified System Administrator" style="max-width: 150px; margin: 0 auto 1rem; display: block;">
+                        <h3>Red Hat Certified System Administrator (RHCSA)</h3>
+                        <p>Expires: Sep 8, 2028</p>
+                        <a href="https://www.credly.com/badges/32194c61-d81b-44ec-8062-8a752218bde2/public_url" target="_blank" class="view-badges">View Credential</a>
+                    </div>
+                </div>
+                
+                <!-- AWS Certified Solutions Architect - Associate -->
+                <div class="certificate-card">
+                    <div class="certificate-content">
+                        <img src="badges/aws-certified-solutions-architect-associate.png" alt="AWS Certified Solutions Architect - Associate" style="max-width: 150px; margin: 0 auto 1rem; display: block;">
+                        <h3>AWS Certified Solutions Architect - Associate</h3>
+                        <p>Expires: Jul 31, 2028</p>
+                        <a href="https://www.credly.com/badges/4e5e3f39-75c4-4a22-b26a-4d36057c4e5b/public_url" target="_blank" class="view-badges">View Credential</a>
+                    </div>
+                </div>
+                
+                <!-- CCNA -->
+                <div class="certificate-card">
+                    <div class="certificate-content">
+                        <img src="badges/ccna.png" alt="CCNA (Cisco Certified Network Associate)" style="max-width: 150px; margin: 0 auto 1rem; display: block;">
+                        <h3>CCNA (Cisco Certified Network Associate)</h3>
+                        <p>Expires: May 15, 2028</p>
+                        <a href="https://www.credly.com/badges/7fbb639e-e601-429c-a243-ff92f896eab8/public_url" target="_blank" class="view-badges">View Credential</a>
+                    </div>
+                </div>
+                
+                <!-- View All Badges -->
+                <div class="certificate-card view-all-card">
+                    <a href="https://www.credly.com/users/noy-levi.b7d9c67c/badges#credly" target="_blank" rel="noopener noreferrer" class="credly-badge">
+                        <div class="view-all-content">
+                            <i class="fas fa-medal" style="font-size: 3rem; margin-bottom: 1rem; color: #f7b84b;"></i>
+                            <h3>View All My Certifications</h3>
+                            <p>on Credly</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">My Projects</h2>
+            
+            <!-- Projects Accordion -->
+            <div class="accordion" data-aos="fade-up" data-aos-delay="100">
+                <!-- JournAI Project -->
+                <div class="accordion-item active">
+                    <div class="accordion-header">
+                        <h3>JournAI - AI-Powered Travel Planner</h3>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="project-image">
+                            <img src="images/JournAI.png" alt="JournAI Project">
+                        </div>
+                        <p>Developed an innovative travel planning platform that leverages artificial intelligence to create personalized travel experiences. This cloud-native application features a microservices architecture with a unique JournAI component that provides intelligent recommendations and contextual trip planning.</p>
+                        
+                        <div class="technologies-container">
+                            <h4>Technical Implementation:</h4>
+                            <ul style="text-align: left; margin: 10px 0; padding-left: 20px; color: #555;">
+                                <li><strong>Cloud Infrastructure:</strong> Deployed on AWS using Terraform for infrastructure as code</li>
+                                <li><strong>Containerization:</strong> Docker containers orchestrated with Kubernetes for scalable microservices</li>
+                                <li><strong>CI/CD:</strong> Implemented GitOps workflow with ArgoCD and Helm for automated deployments</li>
+                                <li><strong>Monitoring:</strong> Integrated Prometheus and Grafana for comprehensive system observability</li>
+                                <li><strong>Security:</strong> Secured sensitive data using AWS SSM Parameter Store and IAM roles</li>
+                                <li><strong>AI/ML:</strong> Implemented NLP-based recommendation engine for personalized travel suggestions</li>
+                            </ul>
+                        </div>
+
+                        <div class="technologies-container" style="margin-top: 1.5rem;">
+                            <h4>Key Features:</h4>
+                            <ul style="text-align: left; margin: 10px 0; padding-left: 20px; color: #555;">
+                                <li>Intelligent itinerary generation based on user preferences and behavior</li>
+                                <li>Real-time collaboration for group trip planning</li>
+                                <li>Automated deployment across multiple environments (dev/staging/prod)</li>
+                                <li>Comprehensive monitoring and alerting system</li>
+                                <li>Secure authentication and authorization</li>
+                            </ul>
+                        </div>
+
+                        <div class="project-links">
+                            <a href="https://github.com/NoyLevi24/JournAI.git" target="_blank" class="project-btn">
+                                <i class="fab fa-github"></i> JournAI Repo
+                            </a>
+                            <a href="https://github.com/NoyLevi24/Terraform.git" target="_blank" class="project-btn">
+                                <i class="fab fa-github"></i> Terraform
+                            </a>
+                            <a href="https://github.com/NoyLevi24/GitOps.git" target="_blank" class="project-btn">
+                                <i class="fab fa-github"></i> GitOps
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 (Example) -->
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Project Coming Soon</h3>
+                        <span class="accordion-icon">▼</span>
+                    </div>
+                    <div class="accordion-content">
+                        <p>I'm currently working on my next exciting project. Stay tuned for updates!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact" style="background-color: #f8f9ff; padding: 3.5rem 0;">
+        <div class="container">
+            <div class="contact-wrapper" style="max-width: 1000px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);">
+                <div class="contact-content" style="padding: 2rem;">
+                    <h2 class="section-title" data-aos="fade-up" style="margin-bottom: 1.2rem; font-size: 1.8rem; color: #2c3e50; text-align: center;">Get In Touch</h2>
+                    <p data-aos="fade-up" data-aos-delay="50" style="font-size: 1rem; color: #555; margin-bottom: 2rem; line-height: 1.6; text-align: center;">
+                        I'm always open to discussing new opportunities or interesting projects. Feel free to reach out!
+                    </p>
+                    
+                    <div class="contact-methods" style="display: flex; justify-content: space-between; gap: 1.2rem; margin: 0 auto; max-width: 100%;">
+                        <!-- Email -->
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=noylevi2024@gmail.com" target="_blank" class="contact-card" data-aos="fade-up" data-aos-delay="100" 
+                           style="flex: 1; min-width: 0; background: #f8f9ff; border-radius: 10px; padding: 1.2rem; 
+                                  text-align: center; text-decoration: none; color: inherit; 
+                                  transition: transform 0.3s ease, box-shadow 0.3s ease;
+                                  border: 1px solid #e8edff;">
+                            <div class="contact-icon" style="width: 50px; height: 50px; background: linear-gradient(135deg, #4a6cf7 0%, #2541b2 100%); 
+                                 border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.8rem;">
+                                <i class="fas fa-envelope" style="color: white; font-size: 1.2rem;"></i>
+                            </div>
+                            <h3 style="color: #2c3e50; margin-bottom: 0.5rem; font-size: 1.1rem; white-space: nowrap;">Email Me</h3>
+                            <p style="color: #6c757d; font-size: 0.9rem; margin: 0; overflow: hidden; text-overflow: ellipsis;">noylevi2024@gmail.com</p>
+                        </a>
+                        
+                        <!-- LinkedIn -->
+                        <a href="https://www.linkedin.com/in/noy-levi-82466239a/" target="_blank" class="contact-card" data-aos="fade-up" data-aos-delay="150"
+                           style="flex: 1; min-width: 0; background: #f8f9ff; border-radius: 10px; padding: 1.2rem; 
+                                  text-align: center; text-decoration: none; color: inherit; 
+                                  transition: transform 0.3s ease, box-shadow 0.3s ease;
+                                  border: 1px solid #e8edff;">
+                            <div class="contact-icon" style="width: 50px; height: 50px; background: linear-gradient(135deg, #0077b5 0%, #004182 100%); 
+                                 border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.8rem;">
+                                <i class="fab fa-linkedin-in" style="color: white; font-size: 1.2rem;"></i>
+                            </div>
+                            <h3 style="color: #2c3e50; margin-bottom: 0.5rem; font-size: 1.1rem; white-space: nowrap;">LinkedIn</h3>
+                            <p style="color: #6c757d; font-size: 0.9rem; margin: 0;">Connect with me</p>
+                        </a>
+                        
+                        <!-- GitHub -->
+                        <a href="https://github.com/NoyLevi24" target="_blank" class="contact-card" data-aos="fade-up" data-aos-delay="200"
+                           style="flex: 1; min-width: 0; background: #f8f9ff; border-radius: 10px; padding: 1.2rem; 
+                                  text-align: center; text-decoration: none; color: inherit; 
+                                  transition: transform 0.3s ease, box-shadow 0.3s ease;
+                                  border: 1px solid #e8edff;">
+                            <div class="contact-icon" style="width: 50px; height: 50px; background: linear-gradient(135deg, #333 0%, #000 100%); 
+                                 border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.8rem;">
+                                <i class="fab fa-github" style="color: white; font-size: 1.2rem;"></i>
+                            </div>
+                            <h3 style="color: #2c3e50; margin-bottom: 0.5rem; font-size: 1.1rem; white-space: nowrap;">GitHub</h3>
+                            <p style="color: #6c757d; font-size: 0.9rem; margin: 0;">View my projects</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <style>
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 65, 178, 0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .contact-content {
+                padding: 2rem !important;
+            }
+            
+            .contact-methods {
+                grid-template-columns: 1fr !important;
+            }
+            
+            .contact-card {
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Noy Levi. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Accordion functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const accordionItems = document.querySelectorAll('.accordion-item');
+            
+            accordionItems.forEach(item => {
+                const header = item.querySelector('.accordion-header');
+                header.addEventListener('click', () => {
+                    // Close all other accordion items
+                    accordionItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        $(document).on('click', 'a[href^="#"]', function(e) {
+            const target = $($(this).attr('href'));
+            if (target.length) {
+                e.preventDefault();
+                $('html, body').animate({
+                    scrollTop: target.offset().top - 70
+                }, 1000);
+            }
+        });
+
+        // Navbar background change on scroll
+        $(window).scroll(function() {
+            if ($(window).scrollTop() > 50) {
+                $('.navbar').addClass('scrolled');
+            } else {
+                $('.navbar').removeClass('scrolled');
+            }
+        });
+
+        // Add scrolled class on page load if not at top
+        if ($(window).scrollTop() > 50) {
+            $('.navbar').addClass('scrolled');
+        }
+    </script>
+</body>
+</html>
